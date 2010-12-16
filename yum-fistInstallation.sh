@@ -3,9 +3,10 @@
 #just update
 sudo yum -y update
 
+# needed for youseikouza
 sudo yum -y install telnet-server
-yum -y install postfix
-yum -y install dovecot
-yum -y install cyrus-imapd
-yum -y install vsftpd
+sudo yum -y install postfix
+sudo yum -y install dovecot
+sudo yum -y install cyrus-imapd
+sudo yum -y install vsftpd
 
