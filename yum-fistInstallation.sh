@@ -10,3 +10,4 @@ sudo yum -y install dovecot
 sudo yum -y install cyrus-imapd
 sudo yum -y install vsftpd
 
+sudo yum -y install samba-client
