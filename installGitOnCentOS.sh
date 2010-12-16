@@ -14,3 +14,9 @@ sudo make
 sudo make install
 git config --global user.name "takuyahashimoto"
 git config --global user.email takuya21hashimoto@gmail.com
+
+cd ~
+mkdir git
+cd git
+git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/start-scripts
+
