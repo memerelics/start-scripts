@@ -19,4 +19,5 @@ cd ~
 mkdir git
 cd git
 git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/start-scripts
-
+cd start-scripts
+git remote add sakura-ss ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/start-scripts
