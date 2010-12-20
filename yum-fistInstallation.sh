@@ -12,3 +12,5 @@ sudo yum -y install vsftpd
 
 sudo yum -y install samba-client
 sudo yum -y install bind
+sudo yum -y install bind-chroot
+sudo yum -y install caching-nameserver
