@@ -2,6 +2,7 @@
 
 #just update
 sudo yum -y update
+#sudo yum -y upgrade yum ???
 
 # needed for youseikouza
 sudo yum -y install telnet-server
