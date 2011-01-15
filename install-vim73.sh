@@ -18,7 +18,7 @@ mkdir -p /home/hash/work/src
 cd /home/hash/work/src
 echo "cd /home/hash/work/src\n"
 
-wget ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2
+wget ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2 > /dev/null 2>&1
 tar jxfv vim-7.3.tar.bz2
 
 mkdir vim73/patches
