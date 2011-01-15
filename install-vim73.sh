@@ -1,3 +1,12 @@
+#!/bin/sh
+
+### confirm that following part is executed as hash ###
+if [ "`whoami`" != "hash" ]; then
+  echo "ERROR: should run as hash"
+  exit 1
+fi
+
+### install required yums
 sudo yum -y install patch
 sudo yum -y install ncurses-devel
 
