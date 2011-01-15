@@ -1,8 +1,14 @@
 #!/bin/sh
 
+#run as root
+if [ "`whoami`" != "root" ]; then
+  echo "ERROR: should run as root"
+  exit 1
+fi
+
 #just update
-sudo yum -y update
-sudo yum -y upgrade
+yum -y update
+yum -y upgrade
 
 ### needed for youseikouza
 #sudo yum -y install telnet-server

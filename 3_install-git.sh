@@ -1,5 +1,11 @@
 #!/bin/sh
 
+#run as hash -- because create new file/dirs
+if [ "`whoami`" != "hash" ]; then
+  echo "ERROR: should run as hash"
+  exit 1
+fi
+
 sudo yum -y install zlib-devel
 
 mkdir -p /home/hash/work/src
