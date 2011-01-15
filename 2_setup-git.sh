@@ -44,8 +44,9 @@ git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
 # git clone git@github.com:takuyahashimoto/config.git 
 
 cd config
-git remote add origin git@github.com:takuyahashimoto/config.git
+git remote add github git@github.com:takuyahashimoto/config.git
 git remote add sakura ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
+# "origin" is exactlly the origin of clone
 
 cd /home/hash/git/config
 sh makealiases.sh
