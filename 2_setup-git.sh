@@ -1,13 +1,6 @@
-# confirm that first this script is executed as root
-if [ "`whoami`" != "root" ]; then
-  echo "ERROR: should run as root"
-  exit 1
-fi
-# [edit]
-# remove comment of wheel group
-# and may need to Path to /usr/sbin
-
-
+#!/bin/sh
+# this start-script should be run 
+# after 1st script.
 
 ### confirm that following part is executed as hash ###
 if [ "`whoami`" != "hash" ]; then
@@ -28,8 +21,6 @@ cd git-1.7.3
 sudo ./configure --prefix=/usr/local
 sudo make
 sudo make install
-
-
 
 ##### 5. setup git #####
 

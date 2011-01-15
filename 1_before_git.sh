@@ -21,7 +21,9 @@ useradd hash
 passwd hash
 usermod -G wheel hash
 visudo
+# [edit] remove comment of wheel group
+# [edit] and may need to Path to /usr/sbin
 
 ### 3. switch user to hash ###
-scp takuyahashimoto@112.78.112.93:/home/takuyahashimoto/git/start-scripts//2_setup-git.sh /home/hash
+scp takuyahashimoto@112.78.112.93:/home/takuyahashimoto/git/start-scripts/2_*.sh /home/hash
 su hash
