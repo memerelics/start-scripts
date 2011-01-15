@@ -20,6 +20,9 @@ git remote add sakura ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimot
 
 ### clone config
 cd /home/hash/git
-git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
+git clone git@github.com:takuyahashimoto/config.git 
+# need puclic key update?
+#ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
 cd config
+git remote add origin git@github.com:takuyahashimoto/config.git
 git remote add sakura ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
