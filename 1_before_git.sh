@@ -23,5 +23,5 @@ usermod -G wheel hash
 visudo
 
 ### 3. switch user to hash ###
-scp takuyahashimoto@112.78.112.93:/home/takuyahashimoto/git/start-scripts/1_before_git_hash.sh /home/hash
+scp takuyahashimoto@112.78.112.93:/home/takuyahashimoto/git/start-scripts//2_setup-git.sh /home/hash
 su hash
