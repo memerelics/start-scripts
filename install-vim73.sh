@@ -9,6 +9,8 @@ fi
 ### install required yums
 sudo yum -y install patch
 sudo yum -y install ncurses-devel
+sudo yum -y install libselinux-devel # for selinux 
+
 
 mkdir -p /home/hash/work/src
 
@@ -33,3 +35,13 @@ cd /home/hash/work/src/vim73
 sudo ./configure --prefix=/usr/local --enable-multibyte --with-features=huge
 sudo make
 sudo make install
+
+### ERROR
+#  make[1]: *** [objects/os_unix.o] Error 1
+#  make[1]: Leaving directory `/home/hash/work/src/vim73/src'
+#  make: *** [install] Error 2
+#  [hash@www13389u start-scripts]$ vim
+#  bash: vim: command not found
+
+# => added [sudo yum -y install libselinux-devel]
+
