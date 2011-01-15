@@ -20,9 +20,10 @@ yum -y upgrade
 useradd hash
 passwd hash
 usermod -G wheel hash
-visudo
+# visudo
 # [edit] remove comment of wheel group
 # [edit] and may need to Path to /usr/sbin
+sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 
 ### 3. switch user to hash ###
 scp takuyahashimoto@112.78.112.93:/home/takuyahashimoto/git/start-scripts/2_*.sh /home/hash
