@@ -1,0 +1,91 @@
+#!/bin/sh
+# this start-script should be run just for initial OS setup
+# here OS = CentOS 5
+# contains 4 parts.
+#   1. yum update
+#   2. create user "hash"
+#   3. switch user to hash
+#   4. install git
+#   5. setup git
+
+# confirm that first this script is executed as root
+if [ "`whoami`" != "root" ]; then
+  echo "ERROR: should run as root"
+  exit 1
+fi
+
+##### 1. yum update #####
+yum -y update
+yum -y upgrade
+
+##### 2. create user "hash" #####
+useradd hash
+passwd hash
+usermod -G wheel hash
+visudo
+
+
+# [edit]
+# remove comment of wheel group
+# and may need to Path to /usr/sbin
+
+
+### switch user to hash -- because create new file/dirs ###
+su hash
+
+### confirm that following part is executed as hash ###
+if [ "`whoami`" != "hash" ]; then
+  echo "ERROR: should run as hash"
+  exit 1
+fi
+
+##### 3. install git #####
+sudo yum -y install zlib-devel
+
+mkdir -p /home/hash/work/src
+cd /home/hash/work/src
+sudo wget http://kernel.org/pub/software/scm/git/git-1.7.3.tar.bz2
+sudo tar xvjf git-1.7.3.tar.bz2
+
+cd git-1.7.3
+
+sudo ./configure --prefix=/usr/local
+sudo make
+sudo make install
+
+
+
+##### 5. setup git #####
+
+#run as hash
+if [ "`whoami`" != "hash" ]; then
+  echo "ERROR: should run as hash"
+  exit 1
+fi
+
+git config --global user.name "takuyahashimoto"
+git config --global user.email takuya21hashimoto@gmail.com
+
+cd /home/hash
+mkdir git
+
+### clone start-scripts
+cd /home/hash/git
+git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/start-scripts
+cd start-scripts
+git remote add sakura ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/start-scripts
+
+
+### clone config
+cd /home/hash/git
+
+git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
+# if already puclic key on github is updated...
+# git clone git@github.com:takuyahashimoto/config.git 
+
+cd config
+git remote add origin git@github.com:takuyahashimoto/config.git
+git remote add sakura ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
+
+
+
