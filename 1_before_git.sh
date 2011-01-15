@@ -26,4 +26,5 @@ visudo
 
 ### 3. switch user to hash ###
 scp takuyahashimoto@112.78.112.93:/home/takuyahashimoto/git/start-scripts/2_*.sh /home/hash
+chown hash:hash /home/hash/*
 su hash
