@@ -38,10 +38,5 @@ sudo make install
 
 ### ERROR
 #  make[1]: *** [objects/os_unix.o] Error 1
-#  make[1]: Leaving directory `/home/hash/work/src/vim73/src'
-#  make: *** [install] Error 2
-#  [hash@www13389u start-scripts]$ vim
-#  bash: vim: command not found
-
 # => added [sudo yum -y install libselinux-devel]
 
