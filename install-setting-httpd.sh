@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 0. confirm that first this script is executed as root
+# confirm that first this script is executed as root
 if [ "`whoami`" != "root" ]; then
   echo "ERROR: should run as root"
   exit 1
