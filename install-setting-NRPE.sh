@@ -16,19 +16,22 @@ yum -y install openssl-devel
 
 
 ############################
-#    create user nagios    #
+#     prepare base user    #
 ############################
+### prepare directory 
+mkdir /usr/local/nagios
+
+### create user nagios
 if [ "`cat /etc/passwd | grep nagios`" != "" ]; then
 echo "user nagios is already exist\n"
 else
 echo "create new user nagios"
 useradd -d /usr/local/nagios/ -M nagios
+# make sure path is no problem. maybe need "su -"
 fi
 
-### prepare directory 
-mkdir /usr/local/nagios
+### change owner:group
 chown nagios:nagios /usr/local/nagios/
-
 
 ############################
 #       install NRPE       #
@@ -39,8 +42,6 @@ wget http://jaist.dl.sourceforge.net/sourceforge/nagios/nrpe-2.12.tar.gz
 tar zxvf nrpe-2.12.tar.gz
 cd nrpe-2.12
 ./configure && make nrpe && make install-daemon && make install-daemon-config && make install-xinetd
-
-
 
 ############################
 # install nagios-plugins #
