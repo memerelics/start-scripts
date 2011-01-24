@@ -45,6 +45,10 @@ cd nagios-3.2.3
 /etc/init.d/nagios start
 /etc/init.d/httpd restart
 
+############################
+#  nagios web Basic user   #
+############################
+htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 
 ############################
 # install nagios-plugins   #
