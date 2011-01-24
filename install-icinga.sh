@@ -1,6 +1,7 @@
 #!/bin/sh
 # basically based on 
 # http://docs.icinga.org/latest/en/quickstart-icinga.html
+# http://d.hatena.ne.jp/dharry/20100923/1285187469
 
 ### check httpd is already running
 if [ "`pgrep httpd`" = "" ]; then
@@ -33,4 +34,61 @@ wget http://sourceforge.net/projects/icinga/files/icinga/1.2.1/icinga-1.2.1.tar.
 tar zvxf icinga-1.2.1.tar.gz
 cd icinga-1.2.1
 
-# ref: http://d.hatena.ne.jp/dharry/20100923/1285187469
+
+useradd -m icinga
+passwd icinga
+/usr/sbin/groupadd icinga
+/usr/sbin/groupadd icinga-cmd
+/usr/sbin/usermod -a -G icinga-cmd icinga
+/usr/sbin/usermod -a -G icinga-cmd www-data
+/usr/sbin/usermod -a -G icinga-cmd apache
+
+#  DON'T FORGET TO INSTALL NAGIOS PLUGINs
+
+./configure --with-command-group=icinga-cmd
+make all
+make install
+
+#install init.d scripts
+make install-init
+# install sample config files
+make install-config
+make install-commandmode 
+
+# mod email => future, sed
+vi /usr/local/icinga/etc/objects/contacts.cfg
+
+############################
+##   for "classic" web    ##
+############################
+# TODO: define what each make doin'
+make cgis
+make install-cgis
+make install-html
+
+# install Icinga/Apache conf file to: /etc/httpd/conf.d/icinga.conf
+make install-webconf
+
+############################
+#   icinga web Basic user  #
+############################
+htpasswd -c /usr/local/icinga/etc/htpasswd.users icingaadmin
+
+# restart Apache
+/etc/init.d/httpd restart
+
+
+# verify "TODO:if wrong format, stop running icinga"
+/usr/local/icinga/bin/icinga -v /usr/local/icinga/etc/icinga.cfg
+
+
+############################
+#   finally start Icinga   #
+############################
+chkconfig --add icinga
+chkconfig icinga on
+/etc/init.d/icinga start
+
+
+echo "now you can check classic frontend."
+echo "by default, it's in... http://<ADDRESS>/icinga/"
