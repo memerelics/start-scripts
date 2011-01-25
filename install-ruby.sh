@@ -31,7 +31,8 @@ cd rubygems-1.4.2
 ruby setup.rb
 
 ############################
-#       install RDocs      #
+#       install Others     #
 ############################
+# notice that these pachages are not the latest version.
 yum -y install rdoc
-
+yum -y install ruby-devel
