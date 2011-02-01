@@ -29,7 +29,7 @@ Host github.com
 EOF
 
 
-echo "/////// OK, noe go to https://github.com/account ...\n\
+echo "/////// OK, now go to https://github.com/account ...
       /////// and insert text below."
 
 cat ~/.ssh/id_rsa_github.pub
