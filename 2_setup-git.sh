@@ -10,6 +10,8 @@ fi
 
 ##### 3. install git #####
 sudo yum -y install zlib-devel
+sudo yum -y install gcc
+
 
 mkdir -p /home/hash/work/src
 cd /home/hash/work/src
