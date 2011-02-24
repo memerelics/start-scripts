@@ -40,24 +40,13 @@ mkdir git
 
 ### clone config
 cd /home/hash/git
-
-git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
-# if already puclic key on github is updated...
-# git clone git@github.com:takuyahashimoto/config.git 
-
-cd config
-git remote add github git@github.com:takuyahashimoto/config.git
-git remote add sakura ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/config
-# "origin" is exactlly the origin of clone
-
-cd /home/hash/git/config
-sh makealiases.sh
-
+git clone --origin github git://github.com/takuyahashimoto/config.git
+echo "git clone --origin github git://github.com/takuyahashimoto/config.git"
 
 ### clone start-scripts
 cd /home/hash/git
 git clone --origin github git://github.com/takuyahashimoto/start-scripts.git
 echo "git clone --origin github git://github.com/takuyahashimoto/start-scripts.git"
-cd start-scripts
-
 echo " now, you can run rest of start-scripts"
+# if already puclic key on github is updated...
+# git clone git@github.com:takuyahashimoto/config.git 
