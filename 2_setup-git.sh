@@ -56,8 +56,8 @@ sh makealiases.sh
 
 ### clone start-scripts
 cd /home/hash/git
-git clone ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/start-scripts
+git clone --origin github git://github.com/takuyahashimoto/start-scripts.git
+echo "git clone --origin github git://github.com/takuyahashimoto/start-scripts.git"
 cd start-scripts
-git remote add sakura ssh://takuyahashimoto@112.78.112.93:22/home/takuyahashimoto/git/start-scripts
 
 echo " now, you can run rest of start-scripts"
