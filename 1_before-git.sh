@@ -4,7 +4,7 @@
 # contains 3 parts.
 #   1. yum update
 #   2. create user "hash"
-#   3. switch user to hash
+#   3. download init scripts via HTTP
 
 # 0. confirm that first this script is executed as root
 if [ "`whoami`" != "root" ]; then
@@ -27,5 +27,5 @@ sed -i 's/# %wheel\tALL=(ALL)\tALL/%wheel\tALL=(ALL)\tALL/g' /etc/sudoers
 
 ### 3. switch user to hash ###
 yum -y install wget
-wget http://github.com/takuyahashimoto/start-scripts/raw/master/1_*.sh
-wget http://github.com/takuyahashimoto/start-scripts/raw/master/2_*.sh
+wget --no-check-certificate https://github.com/takuyahashimoto/start-scripts/raw/master/1_before-git.sh
+wget --no-check-certificate https://github.com/takuyahashimoto/start-scripts/raw/master/2_setup-git.sh
