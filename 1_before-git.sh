@@ -26,6 +26,6 @@ usermod -G wheel hash
 sed -i 's/# %wheel\tALL=(ALL)\tALL/%wheel\tALL=(ALL)\tALL/g' /etc/sudoers
 
 ### 3. switch user to hash ###
-scp takuyahashimoto@112.78.112.93:/home/takuyahashimoto/git/start-scripts/2_*.sh /home/hash
-chown hash:hash /home/hash/*
-su hash
+yum -y install wget
+wget http://github.com/takuyahashimoto/start-scripts/raw/master/1_*.sh
+wget http://github.com/takuyahashimoto/start-scripts/raw/master/2_*.sh
