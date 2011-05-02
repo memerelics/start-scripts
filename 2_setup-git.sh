@@ -50,3 +50,6 @@ echo "git clone --origin github git://github.com/takuyahashimoto/start-scripts.g
 echo " now, you can run rest of start-scripts"
 # if already puclic key on github is updated...
 # git clone git@github.com:takuyahashimoto/config.git 
+
+echo "///////////////////////////////////////"
+echo "please run setup-github.sh to push to github"
