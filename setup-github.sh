@@ -13,8 +13,6 @@ ssh-keygen -t rsa
 mv id_rsa_github* ~/.ssh/
 
 cat <<EOF >> ~/.ssh/config 
-
-
 ###################################
 ### Github - setup by my script ### 
 ###################################
@@ -28,9 +26,12 @@ Host github.com
   IdentitiesOnly yes
 EOF
 
+# Avoid ERROR: [ Bad owner or permissions on /home/hash/.ssh/config ]
+chmod 600 ~/.ssh/config
 
 echo "/////// OK, now go to https://github.com/account ...
       /////// and insert text below."
+echo ""
 
 cat ~/.ssh/id_rsa_github.pub
 
