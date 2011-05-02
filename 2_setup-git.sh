@@ -12,6 +12,7 @@ fi
 sudo yum -y install zlib-devel
 sudo yum -y install gcc
 sudo yum -y install perl
+sudo yum -y install perl-ExtUtils-MakeMaker
 
 
 mkdir -p /home/hash/work/src
