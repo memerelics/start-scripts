@@ -13,11 +13,14 @@ fi
 
 mkdir -p /root/work/src
 cd /root/work/src
-## wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p136.tar.gz
-wget http://core.ring.gr.jp/archives/lang/ruby/ruby-1.9.2-p136.tar.gz
-tar zxvf ruby-1.9.2-p136.tar.gz
-cd ruby-1.9.2-p136
-./configure --prefix=/usr/local
+### for stable version
+# wget http://core.ring.gr.jp/archives/lang/ruby/ruby-1.9-stable.tar.gz
+### for latest version
+wget http://core.ring.gr.jp/archives/lang/ruby/ruby-1.9.2-p180.tar.gz
+tar zxvf ruby-1.9.2-p180.tar.gz
+cd ruby-1.9.2-p180
+#./configure --prefix=/usr/local
+./configure --prefix=/opt/local
 make && make install
 
 

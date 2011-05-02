@@ -11,6 +11,7 @@ fi
 ##### 3. install git #####
 sudo yum -y install zlib-devel
 sudo yum -y install gcc
+sudo yum -y install perl
 
 
 mkdir -p /home/hash/work/src

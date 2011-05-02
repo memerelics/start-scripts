@@ -24,8 +24,8 @@ tar jxfv vim-7.3.tar.bz2
 mkdir vim73/patches
 cd vim73/patches
 
-seq -f http://ftp.vim.org/pub/vim/patches/7.3/7.3.%03g 170 | xargs wget > /dev/null 2>&1
-## replace 170 => newest patch version
+seq -f http://ftp.vim.org/pub/vim/patches/7.3/7.3.%03g 89 | xargs wget > /dev/null 2>&1
+## replace 89 => newest patch version
 cd ..
 cat patches/7.3.* | patch -p0
 
