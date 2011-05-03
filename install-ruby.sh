@@ -19,8 +19,8 @@ cd /root/work/src
 wget http://core.ring.gr.jp/archives/lang/ruby/ruby-1.9.2-p180.tar.gz
 tar zxvf ruby-1.9.2-p180.tar.gz
 cd ruby-1.9.2-p180
-#./configure --prefix=/usr/local
-./configure --prefix=/opt/local
+./configure --prefix=/usr/local
+#./configure --prefix=/opt/local
 make && make install
 
 
@@ -31,9 +31,9 @@ make && make install
 
 mkdir -p /root/work/src
 cd /root/work/src
-wget http://rubyforge.org/frs/download.php/73882/rubygems-1.4.2.tgz
-tar zxvf rubygems-1.4.2.tgz
-cd rubygems-1.4.2
+wget http://rubyforge.org/frs/download.php/74818/rubygems-1.8.1.tgz
+tar zxvf rubygems-1.8.1.tgz
+cd rubygems-1.8.1
 ruby setup.rb
 
 
