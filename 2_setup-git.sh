@@ -42,13 +42,13 @@ mkdir git
 
 ### clone config
 cd /home/hash/git
-git clone --origin github git@github.com:takuyahashimoto/config.git
-echo "git clone --origin github git://github.com/takuyahashimoto/config.git"
+git clone --origin githubgit@github.com:takuyahashimoto/config.git 
+echo "git clone --origin github git@github.com:takuyahashimoto/config.git"
 
 ### clone start-scripts
 cd /home/hash/git
 git clone --origin github git@github.com:takuyahashimoto/start-scripts.git
-echo "git clone --origin github git://github.com/takuyahashimoto/start-scripts.git"
+echo "git clone --origin github git@github.com:takuyahashimoto/start-scripts.git"
 echo " now, you can run rest of start-scripts"
 # if already puclic key on github is updated...
 # git clone git@github.com:takuyahashimoto/config.git 
