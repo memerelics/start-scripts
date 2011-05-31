@@ -32,7 +32,7 @@ cat patches/7.3.* | patch -p0
 ## KEEP cd 
 cd /home/hash/work/src/vim73
 
-sudo ./configure --prefix=/usr/local --enable-multibyte --with-features=huge
+sudo ./configure --prefix=/usr/local --enable-multibyte --with-features=huge --enable-rubyinterp
 sudo make
 sudo make install
 
