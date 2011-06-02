@@ -25,7 +25,7 @@ mkdir vim73/patches
 cd vim73/patches
 
 seq -f http://ftp.vim.org/pub/vim/patches/7.3/7.3.%03g 206 | xargs wget > /dev/null 2>&1
-## replace 89 => newest patch version
+## replace 206 => newest patch version
 
 cd /home/hash/work/src/vim73
 cat patches/7.3.* | patch -p0
