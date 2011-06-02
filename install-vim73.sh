@@ -34,6 +34,14 @@ sudo ./configure --prefix=/usr/local --enable-multibyte --with-features=huge --e
 sudo make
 sudo make install
 
+### PATH, existing vim
+### NOT TESTED
+#if [ "`which vim`" != "/usr/local/bin/vim" ]; then
+#    cd /usr/bin/
+#    rm -rf vim
+#    ln -s /usr/local/bin/vim vim
+#fi
+
 ### ERROR
 #  make[1]: *** [objects/os_unix.o] Error 1
 # => added [sudo yum -y install libselinux-devel]
@@ -41,3 +49,5 @@ sudo make install
 # TODO: automatically install must-plugins
 # surround.vim, Align.vim, auto_wc.vim, renamer.vim, fugitive.vim
 
+
+### TODO: pathogen-vim settings here
