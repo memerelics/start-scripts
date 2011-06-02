@@ -31,6 +31,7 @@ cat /etc/my.cnf | tee tmp
 chkconfig mysqld on
 mysql_secure_installation
 
+
 ###### set up expect #######
 ###  Enter current password for root (enter for none):
 ###  =>enter
@@ -52,3 +53,4 @@ mysql_secure_installation
 ###### set up expect #######
 
 mysql -p
+rm -rf tmp
