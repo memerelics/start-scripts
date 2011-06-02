@@ -27,5 +27,9 @@ sed -i 's/# %wheel\tALL=(ALL)\tALL/%wheel\tALL=(ALL)\tALL/g' /etc/sudoers
 
 ### 3. switch user to hash ###
 yum -y install wget
-wget --no-check-certificate https://github.com/takuyahashimoto/start-scripts/raw/master/1_before-git.sh
 wget --no-check-certificate https://github.com/takuyahashimoto/start-scripts/raw/master/2_setup-git.sh
+
+## after that, not tested yet ##
+chown hash:hash 2_setup-git.sh
+mv 2_setup-git.sh /home/hash
+su - hash
