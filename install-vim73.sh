@@ -45,9 +45,3 @@ sudo make install
 ### ERROR
 #  make[1]: *** [objects/os_unix.o] Error 1
 # => added [sudo yum -y install libselinux-devel]
-
-# TODO: automatically install must-plugins
-# surround.vim, Align.vim, auto_wc.vim, renamer.vim, fugitive.vim
-
-
-### TODO: pathogen-vim settings here
