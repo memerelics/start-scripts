@@ -1,3 +1,6 @@
+TODO::: change to use rvm
+
+
 #!/bin/sh
 # confirm that this script is executed as root
 if [ "`whoami`" != "root" ]; then
