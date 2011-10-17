@@ -1,5 +1,5 @@
 #!/bin/sh
-# this start-script should be run 
+# this start-script should be run
 # after 1st script.
 
 ### confirm that following part is executed as hash ###
@@ -14,16 +14,22 @@ sudo yum -y install gcc
 sudo yum -y install perl
 sudo yum -y install perl-ExtUtils-MakeMaker
 
+# for lower level packages (for example, Sakura VPS)
+sudo yum -y install make build-essential tcl8.4 tk8.4 gettext
 
+# for tclsh failed; using unoptimized loading
+
+# in this section run as hash, no need sudo.(hamatta)
 mkdir -p /home/hash/work/src
 cd /home/hash/work/src
-sudo wget http://kernel.org/pub/software/scm/git/git-1.7.3.tar.bz2
-sudo tar xvjf git-1.7.3.tar.bz2
+wget http://git-core.googlecode.com/files/git-1.7.7.tar.gz
+tar xvzf git-1.7.7.tar.gz
 
-cd git-1.7.3
+cd git-1.7.7
 
-sudo ./configure --prefix=/usr/local
-sudo make
+# compile, and install.
+./configure --prefix=/usr/local
+make
 sudo make install
 
 ##### 5. setup git #####
@@ -59,9 +65,9 @@ echo "/////// enter keyname = id_rsa_github ///////"
 ssh-keygen -t rsa
 mv id_rsa_github* ~/.ssh/
 
-cat <<EOF >> ~/.ssh/config 
+cat <<EOF >> ~/.ssh/config
 ###################################
-### Github - setup by my script ### 
+### Github - setup by my script ###
 ###################################
 
 Host github.com
@@ -92,7 +98,7 @@ echo "finish... now try to clone from GitHub"
 
 ### clone config
 cd /home/hash/git
-git clone --origin github git@github.com:takuyahashimoto/config.git 
+git clone --origin github git@github.com:takuyahashimoto/config.git
 echo "CMD :: git clone --origin github git@github.com:takuyahashimoto/config.git"
 
 ### clone start-scripts
