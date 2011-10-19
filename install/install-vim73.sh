@@ -30,8 +30,8 @@ seq -f http://ftp.vim.org/pub/vim/patches/7.3/7.3.%03g 206 | xargs wget > /dev/n
 cd /home/hash/work/src/vim73
 cat patches/7.3.* | patch -p0
 
-sudo ./configure --prefix=/usr/local --enable-multibyte --with-features=huge --enable-rubyinterp
-sudo make
+./configure --prefix=/usr/local --enable-multibyte --with-features=huge --enable-rubyinterp
+make
 sudo make install
 
 ### PATH, existing vim
