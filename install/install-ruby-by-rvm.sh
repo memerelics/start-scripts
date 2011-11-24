@@ -21,5 +21,19 @@ echo " ---------- Ruby Version ------------ "
 ruby --version
 echo " ------------------------------------ "
 
+
 # gem
+
+cat <<_EOF_ > ~/.gemrc
+---
+:verbose: true
+:update_sources: true
+:sources:
+- http://gemcutter.org
+- http://gems.rubyforge.org/
+- http://gems.github.com
+gem: --no-ri --no-rdoc
+_EOF_
+
 gem install bundler --no-rdoc --no-ri
+
