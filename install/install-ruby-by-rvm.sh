@@ -13,8 +13,9 @@ rm tmp-rvm-installer
 source ~/.bashrc
 
 # install ruby and use it
-rvm install 1.9.2-p290
-echo "rvm use 1.9.2-p290" >> ~/.bashrc
+rvm pkg install zlib
+rvm install 1.9.2-p290 --with-zlib-dir=$rvm_usr_path
+echo "rvm 1.9.2-p290" >> ~/.bashrc
 source ~/.bashrc
 
 echo " ---------- Ruby Version ------------ "
@@ -29,9 +30,7 @@ cat <<_EOF_ > ~/.gemrc
 :verbose: true
 :update_sources: true
 :sources:
-- http://gemcutter.org
-- http://gems.rubyforge.org/
-- http://gems.github.com
+- http://rubygems.org
 gem: --no-ri --no-rdoc
 _EOF_
 
