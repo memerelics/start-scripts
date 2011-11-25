@@ -34,5 +34,6 @@ cat <<_EOF_ > ~/.gemrc
 gem: --no-ri --no-rdoc
 _EOF_
 
-gem install bundler --no-rdoc --no-ri
-
+# install required gems. for example...
+# gem install bundler --no-rdoc --no-ri
+# gem install unicorn --no-rdoc --no-ri
