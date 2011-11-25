@@ -1,6 +1,6 @@
 #!/bin/sh
 ############################
-#         NOTICE           
+#         NOTICE
 # this script should be run in remote -- "target" servers.
 ############################
 
@@ -18,7 +18,7 @@ yum -y install openssl-devel
 ############################
 #     prepare base user    #
 ############################
-### prepare directory 
+### prepare directory
 mkdir /usr/local/nagios
 
 ### create user nagios
