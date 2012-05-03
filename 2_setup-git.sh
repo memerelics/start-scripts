@@ -9,13 +9,15 @@ if [ "`whoami`" != "hash" ]; then
 fi
 
 ##### 3. install git #####
-sudo yum -y install zlib-devel
-sudo yum -y install gcc
-sudo yum -y install perl
-sudo yum -y install perl-ExtUtils-MakeMaker
-
-# for lower level packages (for example, Sakura VPS)
-sudo yum -y install make build-essential tcl8.4 tk8.4 gettext
+list=( zlib-devel gcc perl perl-ExtUtils-MakeMaker make build-essential tcl8.4 tk8.4 gettext )
+for item in ${list[@]}; do
+  GREPRESULT=sudo yum list installed | grep $item.x86_64
+  if [ "x$GREPRESULT" = "x" ]; then
+    sudo yum -y install $item
+  else
+    echo "$item is already installed."
+  fi
+done
 
 # for tclsh failed; using unoptimized loading
 
