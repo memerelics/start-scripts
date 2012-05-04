@@ -36,4 +36,13 @@ wget --no-check-certificate https://github.com/takuyahashimoto/start-scripts/raw
 ## after that, not tested yet ##
 chown hash:hash 2_setup-git.sh
 mv 2_setup-git.sh /home/hash
-su - hash
+
+echo <<EOT
+to make it easy to login as hash...
+$ vim ~/.ssh/authorized_keys
+ >>> put your *.pub key inside this file. <<<
+
+$ chmod 600 ~/.ssh/authorized_keys
+
+...and run sshd-config-port.sh to change ssh port from 22 to more secure port
+EOT
