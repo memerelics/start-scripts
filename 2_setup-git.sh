@@ -9,7 +9,7 @@ if [ "`whoami`" != "hash" ]; then
 fi
 
 ##### 3. install git #####
-list=( zlib-devel gcc perl perl-ExtUtils-MakeMaker make build-essential tcl8.4 tk8.4 gettext )
+list=( zlib-devel gcc perl perl-ExtUtils-MakeMaker make build-essential tcl8.4 tk8.4 gettext libcurl )
 for item in ${list[@]}; do
   GREPRESULT=`sudo yum list installed | grep $item.x86_64`
   if [ "x$GREPRESULT" = "x" ]; then
@@ -28,7 +28,7 @@ tar xvzf git-1.7.10.1.tar.gz
 cd git-1.7.10.1
 
 # compile, and install.
-./configure --prefix=/usr/local
+./configure --prefix=/usr/local --with-curl
 make
 sudo make install
 
