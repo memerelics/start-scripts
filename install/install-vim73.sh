@@ -7,10 +7,15 @@ if [ "`whoami`" != "hash" ]; then
 fi
 
 ### install required yums
-sudo yum -y install patch
-sudo yum -y install ncurses-devel
-sudo yum -y install libselinux-devel # for selinux
-
+list=( patch ncurses-devel libselinux-devel )
+for item in ${list[@]}; do
+  GREPRESULT=`sudo yum list installed | grep $item.x86_64`
+  if [ "x$GREPRESULT" = "x" ]; then
+    sudo yum -y install $item
+  else
+    echo "$item is already installed."
+  fi
+done
 
 mkdir -p /home/hash/work/src
 
@@ -24,8 +29,9 @@ tar jxfv vim-7.3.tar.bz2
 mkdir vim73/patches
 cd vim73/patches
 
-seq -f http://ftp.vim.org/pub/vim/patches/7.3/7.3.%03g 206 | xargs wget > /dev/null 2>&1
-## replace 206 => newest patch version
+PATCH_VER=515 # check latest version.
+echo "Downloading patches, with latest version $PATCH_VER"
+seq -f http://ftp.vim.org/pub/vim/patches/7.3/7.3.%03g $PATCH_VER | xargs wget > /dev/null 2>&1
 
 cd /home/hash/work/src/vim73
 cat patches/7.3.* | patch -p0
@@ -56,5 +62,4 @@ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 #  => fatal: Unable to find remote helper for 'http'
 # if here you face "no http" error, it's better to re-install git.
 vim "+BundleInstall" "+qall"
-
 
