@@ -40,7 +40,7 @@ if [ "`whoami`" != "hash" ]; then
   exit 1
 fi
 
-git config --global user.name "takuyahashimoto"
+git config --global user.name "Hash"
 git config --global user.email takuya21hashimoto@gmail.com
 
 #########################################
@@ -103,11 +103,11 @@ echo "finish... now try to clone from GitHub"
 ### clone config
 cd /home/hash
 mkdir git && cd git
-git clone git@github.com:takuyahashimoto/config.git
-echo "CMD :: git clone git@github.com:takuyahashimoto/config.git"
+git clone git@github.com:memerelics/config.git
+echo "CMD :: git clone git@github.com:memerelics/config.git"
 
 ### clone start-scripts
 cd /home/hash/git
-git clone git@github.com:takuyahashimoto/start-scripts.git
-echo "CMD :: git clone git@github.com:takuyahashimoto/start-scripts.git"
+git clone git@github.com:memerelics/start-scripts.git
+echo "CMD :: git clone git@github.com:memerelics/start-scripts.git"
 echo " now, you can run rest of start-scripts"

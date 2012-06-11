@@ -31,7 +31,7 @@ sed -i 's/# %wheel/%wheel/g' /etc/sudoers
 # FYI : I could not yum install via Sakura VPS console.
 #       But temprary I allow root ssh login and yum install via Mac terminal, it works well.
 yum -y install wget
-wget --no-check-certificate https://github.com/takuyahashimoto/start-scripts/raw/master/2_setup-git.sh
+wget --no-check-certificate https://github.com/memerelics/start-scripts/raw/master/2_setup-git.sh
 
 ## after that, not tested yet ##
 chown hash:hash 2_setup-git.sh
@@ -45,4 +45,13 @@ $ vim ~/.ssh/authorized_keys
 $ chmod 600 ~/.ssh/authorized_keys
 
 ...and run sshd-config-port.sh to change ssh port from 22 to more secure port
+EOT
+
+echo "-------------"
+echo <<EOT
+TODO: SELINUX=disabled
+# vim /etc/selinux/config
+
+TODO: change iptables settings
+iptables -L
 EOT
