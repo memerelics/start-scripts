@@ -5,18 +5,18 @@ if [ ! -e $HOME/.bashrc ]; then
   touch $HOME/.bashrc
 fi
 
-curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer > tmp-rvm-installer
-bash tmp-rvm-installer
-rm tmp-rvm-installer
+# insatll rvm with ruby
+curl -L https://get.rvm.io | bash -s stable
 
 # source to make rvm command available
-source ~/.bashrc
+source /home/hash/.rvm/scripts/rvm
+echo "source /home/hash/.rvm/scripts/rvm" >> ~/.bashrc
 
-# install ruby and use it
-rvm pkg install zlib
-rvm install 1.9.2-p290 --with-zlib-dir=$rvm_usr_path
-echo "rvm 1.9.2-p290" >> ~/.bashrc
-source ~/.bashrc
+## install ruby and use it
+# rvm pkg install zlib
+# rvm install 1.9.2-p290 --with-zlib-dir=$rvm_usr_path
+# echo "rvm 1.9.2-p290" >> ~/.bashrc
+# source ~/.bashrc
 
 echo " ---------- Ruby Version ------------ "
 ruby --version
