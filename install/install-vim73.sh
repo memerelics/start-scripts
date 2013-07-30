@@ -29,12 +29,14 @@ tar jxfv vim-7.3.tar.bz2
 mkdir vim73/patches
 cd vim73/patches
 
-PATCH_VER=515 # check latest version.
+PATCH_VER=515 # check latest version here: http://ftp.vim.org/pub/vim/patches/7.3
 echo "Downloading patches, with latest version $PATCH_VER"
 seq -f http://ftp.vim.org/pub/vim/patches/7.3/7.3.%03g $PATCH_VER | xargs wget > /dev/null 2>&1
 
-cd /home/hash/work/src/vim73
-cat patches/7.3.* | patch -p0
+cd .. # at vim73/
+# now vim73 has more than 1000 patches
+cat patches/7.3.??? | patch -p0
+cat patches/7.3.???? | patch -p0
 
 ./configure --prefix=/usr/local --enable-multibyte --with-features=huge --enable-rubyinterp
 make
